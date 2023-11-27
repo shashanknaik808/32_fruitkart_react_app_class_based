@@ -17,19 +17,19 @@ export default class Header extends Component {
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
-                            <i class="fa-solid fa-house"></i>
+                            <i className="fa-solid fa-house"></i>
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <Link to="/signup">SignUp</Link>
-                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <i className="fa-solid fa-right-to-bracket"></i>
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <Link to="/cart" className='cart'>
-                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <i className="fa-solid fa-cart-arrow-down"></i>
                                 <span className='cart-length'>
 
                                 </span>
