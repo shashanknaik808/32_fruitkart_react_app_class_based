@@ -37,3 +37,10 @@
 .product-name {
     margin: 10px 0px;
 }
+
+.product-price {
+    margin: 10px 0px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 30px;
+}
