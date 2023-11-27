@@ -54,6 +54,10 @@ export default class App extends Component {
     }
   }
 
+  handleCartClearence() {
+    this.setCartItems([]);
+  }
+
   render() {
     return (
       <BrowserRouter>
