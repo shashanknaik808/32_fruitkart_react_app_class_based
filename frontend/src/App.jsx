@@ -35,6 +35,25 @@ export default class App extends Component {
     }
   }
 
+  handleRemoveProduct(product) {
+    const productExist = this.cartItems.find(item => {
+      return item.id === product.id;
+    });
+
+    if (productExist.quantity === 1) {
+      this.setCartItems(this.cartItems.filter(item => {
+        return item.id !== product.id;
+      }));
+    }
+    else {
+      this.setCartItems(this.cartItems.map(item => {
+        return item.id === product.id ?
+          { ...productExist, quantity: productExist.quantity - 1 } :
+          item
+      }))
+    }
+  }
+
   render() {
     return (
       <BrowserRouter>
