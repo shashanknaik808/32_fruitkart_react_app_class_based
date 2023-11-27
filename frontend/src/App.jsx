@@ -18,6 +18,23 @@ export default class App extends Component {
     }
   }
 
+  handleAddProduct(product) {
+    const productExist = this.cartItems.find(item => {
+      return item.id === product.id;
+    });
+
+    if (productExist) {
+      this.setCartItems(this.cartItems.map(item => {
+        return item.id === product.id ?
+          { ...productExist, quantity: productExist.quantity + 1 } :
+          item;
+      }))
+    }
+    else {
+      this.setCartItems([this.cartItems, { ...product, quantity: 1 }]);
+    }
+  }
+
   render() {
     return (
       <BrowserRouter>
