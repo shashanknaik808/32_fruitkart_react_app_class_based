@@ -7,6 +7,17 @@ import Cart from './components/cart/Cart';
 import { Component } from 'react';
 
 export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      listcart: {
+        cartItems: null,
+        setCartItems: null
+      }
+    }
+  }
+
   render() {
     return (
       <BrowserRouter>
