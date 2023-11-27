@@ -4,6 +4,8 @@ import "./Header.css";
 
 export default class Header extends Component {
     render() {
+        const { cartItems } = this.props;
+
         return (
             <header className='header'>
                 <div>
@@ -31,12 +33,11 @@ export default class Header extends Component {
                             <Link to="/cart" className='cart'>
                                 <i className="fa-solid fa-cart-arrow-down"></i>
                                 <span className='cart-length'>
-
+                                    {cartItems.length}
                                 </span>
                             </Link>
                         </li>
                     </ul>
-
                 </div>
             </header>
         )
