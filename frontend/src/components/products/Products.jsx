@@ -31,6 +31,13 @@ export default class Products extends Component {
         }
     }
 
+    sortAlphabetAscending = () => {
+        let { productsList } = this.state.setProducts;
+        let sorted = [...productsList].sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1);
+        this.setState({ setProducts: { ...this.state.setProducts, productsList: sorted } });
+    };
+
+
     render() {
         const { flag, productsList } = this.state.setProducts;
         const { handleAddProduct } = this.props;
@@ -41,7 +48,7 @@ export default class Products extends Component {
 
                     <div className="sort-button">
                         <DropdownButton variant="success" title="Sort By ">
-                            <Dropdown.Item eventKey="1" onClick={null}>A -to- Z</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={sortAlphabetAscending}>A -to- Z</Dropdown.Item>
                             <Dropdown.Item eventKey="2" onClick={null}>Z -to- A</Dropdown.Item>
                             <Dropdown.Divider />
                             <Dropdown.Item eventKey="3" onClick={null}>High to Low</Dropdown.Item>
