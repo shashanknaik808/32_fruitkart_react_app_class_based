@@ -63,14 +63,16 @@ export default class App extends Component {
     const { cartItems, setCartItems } = this.state.listcart;
 
     return (
-      <BrowserRouter>
-        <Header cartItems={null} />
-        <Routes>
-          <Route exact path="/" element={<Products />} />
-          <Route exact path="/signup" element={<SignUp />} />
-          <Route exact path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+          <Header cartItems={cartItems} />
+          <Routes>
+            <Route exact path="/" element={<Products handleAddProduct={this.handleAddProduct.bind(this)} />} />
+            <Route exact path="/signup" element={<SignUp />} />
+            <Route exact path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={this.handleAddProduct.bind(this)} handleRemoveProduct={this.handleRemoveProduct.bind(this)} handleCartClearence={this.handleCartClearence.bind(this)} />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     );
   }
 }
