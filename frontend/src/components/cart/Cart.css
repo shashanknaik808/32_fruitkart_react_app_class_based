@@ -53,3 +53,7 @@
     color: white;
     cursor: pointer;
 }
+
+.cart-items-add {
+    background-color: red;
+}
