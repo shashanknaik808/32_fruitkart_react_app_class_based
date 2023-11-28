@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Cart.css';
 
 export default class Cart extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class Cart extends Component {
                 <h2 className='cart-items-header'>Cart Items</h2>
                 <div className='clear-cart'>
                     {cartItems.length >= 1 && (
-                        <button className='clear-cart-button' onClick={this.handleCartClearence}>
+                        <button className='clear-cart-button' onClick={this.props.handleCartClearence}>
                             Clear Cart
                         </button>
                     )}
@@ -42,10 +43,10 @@ export default class Cart extends Component {
                             <img className='cart-item-image' src={item.image} alt={item.name} />
                             <div className='cart-items-name'>{item.name}</div>
                             <div className='cart-items-function'>
-                                <button className='cart-items-add' onClick={() => this.handleAddProduct(item)}>
+                                <button className='cart-items-add' onClick={() => this.props.handleAddProduct(item)}>
                                     +
                                 </button>
-                                <button className='cart-items-remove' onClick={() => this.handleRemoveProduct(item)}>
+                                <button className='cart-items-remove' onClick={() => this.props.handleRemoveProduct(item)}>
                                     -
                                 </button>
                             </div>
