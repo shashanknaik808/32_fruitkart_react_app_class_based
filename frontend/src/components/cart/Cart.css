@@ -75,3 +75,8 @@
     font-weight: 700;
     border-top: 2px solid black;
 }
+
+.cart-items-total-price {
+    display: flex;
+    padding-left: 45%;
+}
